@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ title }}</title>
+    {% load staticfiles %}
+      <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'ussdke/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'ussdke/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo">USSDs</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">About</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">About</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container">
+    {% block content %}
+        <div class="row">
+          <div class="col s5">
+              {% include 'ussdke/company/list.html' %}
+          </div>
+          <div class="col s7">
+              {% include 'ussdke/ussd/list.html' %}
+          </div>
+
+        </div>
+
+    {% endblock %}
+  </div>
+
+
+<!--  Scripts-->
+<!--script src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
+<script src="{% static 'ussdke/js/jquery-2.1.1.min.js' %}"></script>
+
+<script src="{% static 'ussdke/js/materialize.min.js' %}"></script>
+<script src="{% static 'ussdke/js/init.js' %}"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+      $('.company').click(function () {
+
+          var showData = $('.ussds');
+
+
+        $.getJSON('/api/companies/'+this.id+'/ussds', function (data) {
+          console.log(data);
+
+          var items = data.map(function (item) {
+
+            return '<li class="collection-item">'+
+                    '<div>'+
+                        item.code+
+
+                        '<a href="#!" class="secondary-content"><i class="material-icons">share</i></a>'+
+                        '<a href="#!" class="secondary-content"><i class="material-icons">star</i></a>'+
+
+
+                        '<p>'+item.description+'</p>'+
+                    '</div>'+
+                    '</li>'
+
+
+          });
+
+          showData.empty();
+
+          if (items.length) {
+            var content = '<li class="collection-header"><h4>First Names</h4></li>' +
+
+                    items.join('') +
+
+                    '';
+
+
+            //var list = $('<ul />').html(content);
+            showData.append(content);
+          }
+
+
+        });
+
+        showData.text('Loading ussds.');
+      });
+    });
+  </script>
+
+  {% block script %}{% endblock %}
+
+</body>
+</html>
