@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ title }}</title>
     {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'ussdke/favicon.png' %}"/>
       <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{% static 'ussdke/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -18,11 +19,11 @@
         <a id="logo-container" href="/" class="brand-logo">USSDs</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
