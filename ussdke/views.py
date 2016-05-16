@@ -18,7 +18,7 @@ from ussdke.serializers import UssdSerializer, CompanySerializer, CodeSerializer
 def home(request):
     companies = Company.objects.all()
     #context={'companies': CompanySerializer(companies,many=True).data}
-    context={'companies': Company.objects.all()}
+    context={'companies': Company.objects.all(),'ussds':USSD.objects.all()[:5]}
     #print context
     return render(request, 'ussdke/index.html', context)
 
