@@ -1,7 +1,7 @@
 from django.utils import timezone
 
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -19,7 +19,8 @@ class Company(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(editable=False)
     updated_at = models.DateTimeField()
-    icon=models.ImageField(upload_to='images/icons', default='images/icons/default.jpg')
+    #icon=models.ImageField(upload_to='images/icons', default='images/icons/default.jpg')
+    icon = CloudinaryField('icon')
     website=models.URLField()
 
     def __str__(self):
