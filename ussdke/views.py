@@ -2,7 +2,9 @@ import re
 
 from django.db.models import Q
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -19,6 +21,28 @@ def home(request):
     context={'companies': Company.objects.all()}
     #print context
     return render(request, 'ussdke/index.html', context)
+
+
+def companies(request):
+    pass
+
+
+def company_ussds(request,pk):
+    company=Company.objects.get(id=pk)
+    ussds_items=USSD.objects.filter(company=company)
+    paginator=Paginator(ussds_items,5)
+    page = request.GET.get('page',1)
+    try:
+        ussds = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        ussds = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        ussds = paginator.page(paginator.num_pages)
+
+    return render_to_response('ussdke/ussd/list.html', {"ussds": ussds,"company":company})
+
 
 
 def normalize_query(query_string, find_terms=re.compile(r'"([^"]+)"|(\S+)').findall,
