@@ -14,6 +14,11 @@ from rest_framework.generics import ListCreateAPIView,RetrieveUpdateAPIView
 from ussdke.models import USSD, Company, Code
 from ussdke.serializers import UssdSerializer, CompanySerializer, CodeSerializer, CompanyUssdSerializer
 
+def about(request):
+    context = {
+        'title': 'About',
+    }
+    return render(request, 'ussdke/about.html', context)
 
 def home(request):
     companies = Company.objects.all()
