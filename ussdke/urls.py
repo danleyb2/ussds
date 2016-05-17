@@ -16,6 +16,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = format_suffix_patterns([
     url(r'^$', views.home, name='index'),
+    url(r'^about$', views.about, name='about'),
 
     #url(r'^api2/',include(router.urls)),
     url(r'^ussds/', include(
