@@ -2,6 +2,7 @@ from django.utils import timezone
 
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 
@@ -22,9 +23,14 @@ class Company(models.Model):
     #icon=models.ImageField(upload_to='images/icons', default='images/icons/default.jpg')
     icon = CloudinaryField('icon')
     website=models.URLField()
+    isSuggestion = models.BooleanField(default=1)
 
     def __str__(self):
         return self.name
+
+    def get_ussds_url(self):
+        #return str(self.id)+'/ussds'
+        return reverse('ussdke:companies:company:ussds',args=[str(self.id)]) # todo
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -41,6 +47,7 @@ class USSD(models.Model):
     last_confirmed = models.DateTimeField()
     created_at = models.DateTimeField(editable=False)
     updated_at = models.DateTimeField()
+    isSuggestion = models.BooleanField(default=1)
 
     def __str__(self):
         return self.code.value
