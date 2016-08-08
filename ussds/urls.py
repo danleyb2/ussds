@@ -11,7 +11,7 @@ admin.autodiscover()
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^',include('ussdke.urls')),
+    url(r'^',include('ussdke.urls',namespace='ussdke')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
