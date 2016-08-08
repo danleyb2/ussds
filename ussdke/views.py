@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.renderers import TemplateHTMLRenderer,JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateAPIView
@@ -83,6 +84,52 @@ class UssdViewSet(ListCreateAPIView):
     """
     queryset = USSD.objects.all().order_by('-created_at')
     serializer_class = UssdSerializer
+
+
+class CompanyUssdViewSet(ListCreateAPIView):
+    """
+    API endpoint that allows a Company USSDs to be viewed or edited.
+    """
+    queryset = USSD.objects.all()
+    serializer_class = UssdSerializer
+    #pagination_class = StandardResultsSetPagination
+
+    renderer_classes = (JSONRenderer, TemplateHTMLRenderer,)
+
+
+    def list(self, request, *args, **kwargs):
+        company = Company.objects.get(id=kwargs.get('pk'))
+        queryset = self.get_queryset().filter(company=company).order_by('-created_at')
+
+        if request.accepted_renderer.format == 'html':
+            # TemplateHTMLRenderer takes a context dict,
+            # and additionally requires a 'template_name'.
+            # It does not require serialization.
+
+            paginator = Paginator(queryset, 5)
+            page = request.GET.get('page', 1)
+            try:
+                ussds = paginator.page(page)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                ussds = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                ussds = paginator.page(paginator.num_pages)
+
+            #return render_to_response('ussdke/ussd/list.html', )
+
+            data = {"ussds": ussds, "company": company}#{'users': queryset}
+            return Response(data,template_name = 'ussdke/ussd/list.html')
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+        #return Response(self.get_serializer_class()(queryset,context={'request': request},many=True).data)
 
 
 class UssdDetailViewSet(RetrieveUpdateAPIView):
@@ -218,6 +265,13 @@ class UssdDetail(APIView):
         ussd.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+class CompanyDetailViewSet(RetrieveUpdateAPIView):
+    """
+    API endpoint that allows Company to be viewed or edited.
+    """
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+
 
 class CompanyDetail(APIView):
     """
@@ -232,7 +286,7 @@ class CompanyDetail(APIView):
 
     def get(self, request, pk, format=None):
         company = self.get_object(pk)
-        serializer = CompanySerializer(company)
+        serializer = CompanySerializer(company,context={'request': request})
         return Response(serializer.data)
 
     def put(self, request, pk, format=None):
