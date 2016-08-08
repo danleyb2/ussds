@@ -60,17 +60,26 @@
 
         var showData = $('.ussds');
 
-        console.log('getting ussds');
-        $.get(url, function (data) {
-            showData.empty();
-            showData.html(data);
-            $('.get_ussds i').click(function(evt){
-                evt.preventDefault();
-                l=evt
-                get_ussds(evt.target.closest('a').href)
-            });
-        });
-        showData.text('Loading ussds.');
+
+          $.ajax({
+              url: url,
+              beforeSend: function (xhr) {
+                  console.log('getting ussds');
+                  showData.text('Loading ussds.');
+              },
+              headers: {"Accept": "text/html"},
+              type: 'GET',
+              success: function (data) {
+                  showData.empty();
+                  showData.html(data);
+                  $('.get_ussds i').click(function (evt) {
+                      evt.preventDefault();
+                      get_ussds(evt.target.closest('a').href)
+                  });
+              }
+          });
+
+
     }
       $(document).ready(function () {
       $('.company').click(function () {
