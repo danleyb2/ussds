@@ -1,5 +1,7 @@
 from django.utils import timezone
 from rest_framework import serializers
+from django.core.paginator import Paginator
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.fields import Field, ReadOnlyField
 
 from ussdke.models import USSD, Company, Code
@@ -15,14 +17,10 @@ class CodeSerializer(serializers.ModelSerializer):
         )
 
 
-
-
-
 class UssdSerializer(serializers.ModelSerializer):
-
     code = CodeSerializer(read_only=False)
-    #company = CompanySerializer(read_only=False)
-    company=serializers.PrimaryKeyRelatedField(read_only=True)
+    # company = CompanySerializer(read_only=False)
+    company = serializers.PrimaryKeyRelatedField(read_only=True)
 
     '''
     description = serializers.CharField()
@@ -43,25 +41,25 @@ class UssdSerializer(serializers.ModelSerializer):
         pass
 
     '''
+
     class Meta:
         model = USSD
         fields = (
             '__all__'
-            #'id',
-            #'company',
-            #'description',
-            #'code',
-            #'confirmed',
-            #'last_confirmed',
-            #'created_at',
-            #'updated_at'
+            # 'id',
+            # 'company',
+            # 'description',
+            # 'code',
+            # 'confirmed',
+            # 'last_confirmed',
+            # 'created_at',
+            # 'updated_at'
         )
-        depth=1
+        depth = 1
 
 
 class CompanyUssdSerializer(UssdSerializer):
     code = serializers.CharField(read_only=False)
-
 
     last_confirmed = serializers.DateTimeField(default=timezone.now())
     updated_at = serializers.DateTimeField(default=timezone.now())
@@ -78,36 +76,58 @@ class CompanyUssdSerializer(UssdSerializer):
             'updated_at'
         )
 
-
     def create(self, validated_data):
         print repr(validated_data)
         ussd = USSD()
         ussd.code = Code.objects.get_or_create(value=validated_data['code'])[0]
-        ussd.company=validated_data['company']
-        ussd.description=validated_data['description']
+        ussd.company = validated_data['company']
+        ussd.description = validated_data['description']
         ussd.last_confirmed = timezone.now()
         ussd.updated_at = timezone.now()
         ussd.save()
         return ussd
 
 
+class CompanySerializer(serializers.HyperlinkedModelSerializer):
+    # ussds = serializers.StringRelatedField(many=True,read_only=True)
+    #ussds = CompanyUssdSerializer(many=True, read_only=True)
+    ussd_count = serializers.SerializerMethodField('_ussd_count')
+    ussds_url = serializers.SerializerMethodField('_ussds_url')
+    # ussds = serializers.SerializerMethodField('paginate_ussds')
+    # ussds = UssdSerializer(many=True)
+    # updated_at=serializers.DateTimeField(default=timezone.now())
+    icon=serializers.ImageField()
 
-class CompanySerializer(serializers.ModelSerializer):
-    #ussds = serializers.StringRelatedField(many=True,read_only=True)
-    ussds = CompanyUssdSerializer(many=True, read_only=True)
-    #updated_at=serializers.DateTimeField(default=timezone.now())
-    # image=serializers.CharField('#')
 
     class Meta:
-        model = Company
         fields = (
-            #'__all__'
+            # '__all__'
             'id',
-            #'name',
-            #'image',
+            'name',
+            'icon',
+            'website',
             'created_at',
-            'ussds',
+            'ussd_count',
+            'ussds_url',
+
 
         )
-
+        model = Company
         # read_only_fields = ('ussds',)
+
+
+    def _ussd_count(self,obj):
+        '''
+        :type obj Company
+        :param obj:
+        :return:
+        '''
+        return obj.ussds.count()
+
+    def _ussds_url(self,obj):
+        '''
+        :type obj Company
+        :param obj:
+        :return:
+        '''
+        return (self.context['request']).build_absolute_uri(obj.get_ussds_url())
