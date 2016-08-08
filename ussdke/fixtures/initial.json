@@ -1,0 +1,1245 @@
+[
+
+  {
+    "model": "ussdke.code",
+    "pk": 2,
+    "fields": {
+      "value": "*144#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 3,
+    "fields": {
+      "value": "*100#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 4,
+    "fields": {
+      "value": "*#44336#'",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 5,
+    "fields": {
+      "value": "*#1234#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 6,
+    "fields": {
+      "value": "*#12580*369#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 7,
+    "fields": {
+      "value": "*#197328640#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 8,
+    "fields": {
+      "value": "*#06#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 9,
+    "fields": {
+      "value": "*#2222#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 10,
+    "fields": {
+      "value": "*#8999*8376263#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 11,
+    "fields": {
+      "value": "*#272*imei#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 12,
+    "fields": {
+      "value": "*#*#3264#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 13,
+    "fields": {
+      "value": "*#92782#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 14,
+    "fields": {
+      "value": "*#*#9999#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 15,
+    "fields": {
+      "value": "*#07#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 16,
+    "fields": {
+      "value": "*#232339#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 17,
+    "fields": {
+      "value": "*#232331#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 18,
+    "fields": {
+      "value": "*#*#232331#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 19,
+    "fields": {
+      "value": "*#0842#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 20,
+    "fields": {
+      "value": "*#0782#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 21,
+    "fields": {
+      "value": "*#0228#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 22,
+    "fields": {
+      "value": "*#32489#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 23,
+    "fields": {
+      "value": "*#232337#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 24,
+    "fields": {
+      "value": "*#0673#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 25,
+    "fields": {
+      "value": "*#0*#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 26,
+    "fields": {
+      "value": "*#3214789650#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 27,
+    "fields": {
+      "value": "*#0289#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 28,
+    "fields": {
+      "value": "*#0589#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 29,
+    "fields": {
+      "value": "*#0588#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 30,
+    "fields": {
+      "value": "*#7353#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 31,
+    "fields": {
+      "value": "*#8999*8378#",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 32,
+    "fields": {
+      "value": "*#*#0588#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 33,
+    "fields": {
+      "value": "*#*#2664#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.code",
+    "pk": 34,
+    "fields": {
+      "value": "*#*#0842#*#*",
+      "is_template": false
+    }
+  },
+  {
+    "model": "ussdke.company",
+    "pk": 1,
+    "fields": {
+      "name": "Safaricom Kenya",
+      "created_at": "2016-02-13T09:37:17.462Z",
+      "updated_at": "2016-05-16T09:24:36.562Z",
+      "icon": "image/upload/v1463390660/xp3oshgmpknfepyngasj.jpg",
+      "website": "http://www.safaricom.co.ke/",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.company",
+    "pk": 2,
+    "fields": {
+      "name": "Zuku",
+      "created_at": "2016-02-13T11:52:23.995Z",
+      "updated_at": "2016-05-16T09:22:32.871Z",
+      "icon": "image/upload/v1463390554/gjsgpymt14imeew4zhkm.jpg",
+      "website": "http://www.zuku.co.ke/",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.company",
+    "pk": 3,
+    "fields": {
+      "name": "Android Lovers",
+      "created_at": "2016-02-13T13:00:48.755Z",
+      "updated_at": "2016-05-16T09:28:01.263Z",
+      "icon": "image/upload/v1463390882/q2zgn720qekbzjh9yn5u.jpg",
+      "website": "https://www.android.com/",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 1,
+    "fields": {
+      "company": 1,
+      "code": 2,
+      "description": "Check airtime balance",
+      "confirmed": true,
+      "last_confirmed": "2016-02-13T10:42:11Z",
+      "created_at": "2016-02-13T10:42:18.418Z",
+      "updated_at": "2016-02-13T10:42:18.418Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 2,
+    "fields": {
+      "company": 1,
+      "code": 3,
+      "description": "Ussds Services Menu",
+      "confirmed": true,
+      "last_confirmed": "2016-02-13T10:48:16Z",
+      "created_at": "2016-02-13T10:48:18.592Z",
+      "updated_at": "2016-02-13T10:48:18.592Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 4,
+    "fields": {
+      "company": 3,
+      "code": 4,
+      "description": "Software Version Info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:11.465Z",
+      "created_at": "2016-02-13T13:03:11.465Z",
+      "updated_at": "2016-02-13T13:03:11.465Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 5,
+    "fields": {
+      "company": 3,
+      "code": 5,
+      "description": "View SW Version PDA, CSC, MODEM",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:11.768Z",
+      "created_at": "2016-02-13T13:03:11.768Z",
+      "updated_at": "2016-02-13T13:03:11.768Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 6,
+    "fields": {
+      "company": 3,
+      "code": 6,
+      "description": "SW & HW Info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:12.073Z",
+      "created_at": "2016-02-13T13:03:12.073Z",
+      "updated_at": "2016-02-13T13:03:12.073Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 7,
+    "fields": {
+      "company": 3,
+      "code": 7,
+      "description": "Service Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:12.343Z",
+      "created_at": "2016-02-13T13:03:12.343Z",
+      "updated_at": "2016-02-13T13:03:12.343Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 8,
+    "fields": {
+      "company": 3,
+      "code": 8,
+      "description": "IMEI Number.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:12.631Z",
+      "created_at": "2016-02-13T13:03:12.631Z",
+      "updated_at": "2016-02-13T13:03:12.631Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 9,
+    "fields": {
+      "company": 3,
+      "code": 5,
+      "description": "Firmware Version.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:13.038Z",
+      "created_at": "2016-02-13T13:03:13.038Z",
+      "updated_at": "2016-02-13T13:03:13.038Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 10,
+    "fields": {
+      "company": 3,
+      "code": 9,
+      "description": "H/W Version.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:13.328Z",
+      "created_at": "2016-02-13T13:03:13.328Z",
+      "updated_at": "2016-02-13T13:03:13.328Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 11,
+    "fields": {
+      "company": 3,
+      "code": 10,
+      "description": "All Versions Together.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:13.611Z",
+      "created_at": "2016-02-13T13:03:13.611Z",
+      "updated_at": "2016-02-13T13:03:13.611Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 12,
+    "fields": {
+      "company": 3,
+      "code": 11,
+      "description": "Product code",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:13.925Z",
+      "created_at": "2016-02-13T13:03:13.925Z",
+      "updated_at": "2016-02-13T13:03:13.925Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 13,
+    "fields": {
+      "company": 3,
+      "code": 12,
+      "description": "RAM version",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:14.250Z",
+      "created_at": "2016-02-13T13:03:14.250Z",
+      "updated_at": "2016-02-13T13:03:14.250Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 14,
+    "fields": {
+      "company": 3,
+      "code": 13,
+      "description": "Phone Model",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:14.533Z",
+      "created_at": "2016-02-13T13:03:14.533Z",
+      "updated_at": "2016-02-13T13:03:14.533Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 15,
+    "fields": {
+      "company": 3,
+      "code": 14,
+      "description": "Phone/pda/csc info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:14.825Z",
+      "created_at": "2016-02-13T13:03:14.825Z",
+      "updated_at": "2016-02-13T13:03:14.825Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 16,
+    "fields": {
+      "company": 3,
+      "code": 15,
+      "description": "Test History",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:15.172Z",
+      "created_at": "2016-02-13T13:03:15.172Z",
+      "updated_at": "2016-02-13T13:03:15.172Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 17,
+    "fields": {
+      "company": 3,
+      "code": 16,
+      "description": "WLAN Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:15.475Z",
+      "created_at": "2016-02-13T13:03:15.475Z",
+      "updated_at": "2016-02-13T13:03:15.475Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 18,
+    "fields": {
+      "company": 3,
+      "code": 17,
+      "description": "Bluetooth Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:15.780Z",
+      "created_at": "2016-02-13T13:03:15.780Z",
+      "updated_at": "2016-02-13T13:03:15.780Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 19,
+    "fields": {
+      "company": 3,
+      "code": 18,
+      "description": "Bluetooth test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:16.106Z",
+      "created_at": "2016-02-13T13:03:16.106Z",
+      "updated_at": "2016-02-13T13:03:16.106Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 20,
+    "fields": {
+      "company": 3,
+      "code": 19,
+      "description": "Vibration Motor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:16.431Z",
+      "created_at": "2016-02-13T13:03:16.431Z",
+      "updated_at": "2016-02-13T13:03:16.431Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 21,
+    "fields": {
+      "company": 3,
+      "code": 20,
+      "description": "Real Time Clock Test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:16.723Z",
+      "created_at": "2016-02-13T13:03:16.723Z",
+      "updated_at": "2016-02-13T13:03:16.723Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 22,
+    "fields": {
+      "company": 3,
+      "code": 21,
+      "description": "ADC Reading",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:17.039Z",
+      "created_at": "2016-02-13T13:03:17.039Z",
+      "updated_at": "2016-02-13T13:03:17.039Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 23,
+    "fields": {
+      "company": 3,
+      "code": 22,
+      "description": "(Ciphering Info)",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:17.353Z",
+      "created_at": "2016-02-13T13:03:17.353Z",
+      "updated_at": "2016-02-13T13:03:17.353Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 24,
+    "fields": {
+      "company": 3,
+      "code": 23,
+      "description": "Bluetooth Address",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:17.742Z",
+      "created_at": "2016-02-13T13:03:17.742Z",
+      "updated_at": "2016-02-13T13:03:17.742Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 25,
+    "fields": {
+      "company": 3,
+      "code": 24,
+      "description": "Audio Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:18.083Z",
+      "created_at": "2016-02-13T13:03:18.083Z",
+      "updated_at": "2016-02-13T13:03:18.083Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 26,
+    "fields": {
+      "company": 3,
+      "code": 25,
+      "description": "General Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:18.397Z",
+      "created_at": "2016-02-13T13:03:18.397Z",
+      "updated_at": "2016-02-13T13:03:18.398Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 27,
+    "fields": {
+      "company": 3,
+      "code": 26,
+      "description": "LBS Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:18.700Z",
+      "created_at": "2016-02-13T13:03:18.700Z",
+      "updated_at": "2016-02-13T13:03:18.701Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 28,
+    "fields": {
+      "company": 3,
+      "code": 27,
+      "description": "Melody Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:19.048Z",
+      "created_at": "2016-02-13T13:03:19.048Z",
+      "updated_at": "2016-02-13T13:03:19.048Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 29,
+    "fields": {
+      "company": 3,
+      "code": 28,
+      "description": "Light Sensor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:19.375Z",
+      "created_at": "2016-02-13T13:03:19.375Z",
+      "updated_at": "2016-02-13T13:03:19.375Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 30,
+    "fields": {
+      "company": 3,
+      "code": 29,
+      "description": "Proximity Sensor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:19.712Z",
+      "created_at": "2016-02-13T13:03:19.712Z",
+      "updated_at": "2016-02-13T13:03:19.712Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 31,
+    "fields": {
+      "company": 3,
+      "code": 30,
+      "description": "Quick Test Menu",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:20.070Z",
+      "created_at": "2016-02-13T13:03:20.070Z",
+      "updated_at": "2016-02-13T13:03:20.070Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 32,
+    "fields": {
+      "company": 3,
+      "code": 31,
+      "description": "Test Menu.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:20.465Z",
+      "created_at": "2016-02-13T13:03:20.465Z",
+      "updated_at": "2016-02-13T13:03:20.465Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 33,
+    "fields": {
+      "company": 3,
+      "code": 32,
+      "description": "Proximity sensor test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:20.768Z",
+      "created_at": "2016-02-13T13:03:20.768Z",
+      "updated_at": "2016-02-13T13:03:20.768Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 34,
+    "fields": {
+      "company": 3,
+      "code": 33,
+      "description": "Touch screen test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:21.083Z",
+      "created_at": "2016-02-13T13:03:21.083Z",
+      "updated_at": "2016-02-13T13:03:21.083Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 35,
+    "fields": {
+      "company": 3,
+      "code": 34,
+      "description": "Vibration test*",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:21.452Z",
+      "created_at": "2016-02-13T13:03:21.452Z",
+      "updated_at": "2016-02-13T13:03:21.452Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 36,
+    "fields": {
+      "company": 3,
+      "code": 4,
+      "description": "Software Version Info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:21.701Z",
+      "created_at": "2016-02-13T13:03:21.701Z",
+      "updated_at": "2016-02-13T13:03:21.701Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 37,
+    "fields": {
+      "company": 3,
+      "code": 5,
+      "description": "View SW Version PDA, CSC, MODEM",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:21.880Z",
+      "created_at": "2016-02-13T13:03:21.880Z",
+      "updated_at": "2016-02-13T13:03:21.880Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 38,
+    "fields": {
+      "company": 3,
+      "code": 6,
+      "description": "SW & HW Info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.083Z",
+      "created_at": "2016-02-13T13:03:22.083Z",
+      "updated_at": "2016-02-13T13:03:22.083Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 39,
+    "fields": {
+      "company": 3,
+      "code": 7,
+      "description": "Service Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.261Z",
+      "created_at": "2016-02-13T13:03:22.261Z",
+      "updated_at": "2016-02-13T13:03:22.261Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 40,
+    "fields": {
+      "company": 3,
+      "code": 8,
+      "description": "IMEI Number.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.464Z",
+      "created_at": "2016-02-13T13:03:22.464Z",
+      "updated_at": "2016-02-13T13:03:22.464Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 41,
+    "fields": {
+      "company": 3,
+      "code": 5,
+      "description": "Firmware Version.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.632Z",
+      "created_at": "2016-02-13T13:03:22.632Z",
+      "updated_at": "2016-02-13T13:03:22.632Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 42,
+    "fields": {
+      "company": 3,
+      "code": 9,
+      "description": "H/W Version.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.823Z",
+      "created_at": "2016-02-13T13:03:22.823Z",
+      "updated_at": "2016-02-13T13:03:22.823Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 43,
+    "fields": {
+      "company": 3,
+      "code": 10,
+      "description": "All Versions Together.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:22.978Z",
+      "created_at": "2016-02-13T13:03:22.978Z",
+      "updated_at": "2016-02-13T13:03:22.978Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 44,
+    "fields": {
+      "company": 3,
+      "code": 11,
+      "description": "Product code",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:23.159Z",
+      "created_at": "2016-02-13T13:03:23.159Z",
+      "updated_at": "2016-02-13T13:03:23.159Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 45,
+    "fields": {
+      "company": 3,
+      "code": 12,
+      "description": "RAM version",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:23.362Z",
+      "created_at": "2016-02-13T13:03:23.362Z",
+      "updated_at": "2016-02-13T13:03:23.362Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 46,
+    "fields": {
+      "company": 3,
+      "code": 13,
+      "description": "Phone Model",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:23.652Z",
+      "created_at": "2016-02-13T13:03:23.652Z",
+      "updated_at": "2016-02-13T13:03:23.652Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 47,
+    "fields": {
+      "company": 3,
+      "code": 14,
+      "description": "Phone/pda/csc info",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:23.822Z",
+      "created_at": "2016-02-13T13:03:23.822Z",
+      "updated_at": "2016-02-13T13:03:23.822Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 48,
+    "fields": {
+      "company": 3,
+      "code": 15,
+      "description": "Test History",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:23.989Z",
+      "created_at": "2016-02-13T13:03:23.989Z",
+      "updated_at": "2016-02-13T13:03:23.989Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 49,
+    "fields": {
+      "company": 3,
+      "code": 16,
+      "description": "WLAN Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:24.167Z",
+      "created_at": "2016-02-13T13:03:24.167Z",
+      "updated_at": "2016-02-13T13:03:24.167Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 50,
+    "fields": {
+      "company": 3,
+      "code": 17,
+      "description": "Bluetooth Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:24.337Z",
+      "created_at": "2016-02-13T13:03:24.337Z",
+      "updated_at": "2016-02-13T13:03:24.337Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 51,
+    "fields": {
+      "company": 3,
+      "code": 18,
+      "description": "Bluetooth test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:24.528Z",
+      "created_at": "2016-02-13T13:03:24.528Z",
+      "updated_at": "2016-02-13T13:03:24.528Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 52,
+    "fields": {
+      "company": 3,
+      "code": 19,
+      "description": "Vibration Motor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:24.730Z",
+      "created_at": "2016-02-13T13:03:24.730Z",
+      "updated_at": "2016-02-13T13:03:24.730Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 53,
+    "fields": {
+      "company": 3,
+      "code": 20,
+      "description": "Real Time Clock Test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:24.920Z",
+      "created_at": "2016-02-13T13:03:24.920Z",
+      "updated_at": "2016-02-13T13:03:24.920Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 54,
+    "fields": {
+      "company": 3,
+      "code": 21,
+      "description": "ADC Reading",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:25.089Z",
+      "created_at": "2016-02-13T13:03:25.089Z",
+      "updated_at": "2016-02-13T13:03:25.089Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 55,
+    "fields": {
+      "company": 3,
+      "code": 22,
+      "description": "(Ciphering Info)",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:25.291Z",
+      "created_at": "2016-02-13T13:03:25.291Z",
+      "updated_at": "2016-02-13T13:03:25.291Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 56,
+    "fields": {
+      "company": 3,
+      "code": 23,
+      "description": "Bluetooth Address",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:25.459Z",
+      "created_at": "2016-02-13T13:03:25.459Z",
+      "updated_at": "2016-02-13T13:03:25.459Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 57,
+    "fields": {
+      "company": 3,
+      "code": 24,
+      "description": "Audio Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:25.615Z",
+      "created_at": "2016-02-13T13:03:25.615Z",
+      "updated_at": "2016-02-13T13:03:25.615Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 58,
+    "fields": {
+      "company": 3,
+      "code": 25,
+      "description": "General Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:25.817Z",
+      "created_at": "2016-02-13T13:03:25.817Z",
+      "updated_at": "2016-02-13T13:03:25.817Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 59,
+    "fields": {
+      "company": 3,
+      "code": 26,
+      "description": "LBS Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.010Z",
+      "created_at": "2016-02-13T13:03:26.010Z",
+      "updated_at": "2016-02-13T13:03:26.010Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 60,
+    "fields": {
+      "company": 3,
+      "code": 27,
+      "description": "Melody Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.211Z",
+      "created_at": "2016-02-13T13:03:26.211Z",
+      "updated_at": "2016-02-13T13:03:26.211Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 61,
+    "fields": {
+      "company": 3,
+      "code": 28,
+      "description": "Light Sensor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.400Z",
+      "created_at": "2016-02-13T13:03:26.400Z",
+      "updated_at": "2016-02-13T13:03:26.400Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 62,
+    "fields": {
+      "company": 3,
+      "code": 29,
+      "description": "Proximity Sensor Test Mode",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.558Z",
+      "created_at": "2016-02-13T13:03:26.558Z",
+      "updated_at": "2016-02-13T13:03:26.558Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 63,
+    "fields": {
+      "company": 3,
+      "code": 30,
+      "description": "Quick Test Menu",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.748Z",
+      "created_at": "2016-02-13T13:03:26.748Z",
+      "updated_at": "2016-02-13T13:03:26.748Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 64,
+    "fields": {
+      "company": 3,
+      "code": 31,
+      "description": "Test Menu.",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:26.928Z",
+      "created_at": "2016-02-13T13:03:26.928Z",
+      "updated_at": "2016-02-13T13:03:26.928Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 65,
+    "fields": {
+      "company": 3,
+      "code": 32,
+      "description": "Proximity sensor test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:27.119Z",
+      "created_at": "2016-02-13T13:03:27.119Z",
+      "updated_at": "2016-02-13T13:03:27.119Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 66,
+    "fields": {
+      "company": 3,
+      "code": 33,
+      "description": "Touch screen test",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:27.622Z",
+      "created_at": "2016-02-13T13:03:27.622Z",
+      "updated_at": "2016-02-13T13:03:27.622Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "ussdke.ussd",
+    "pk": 67,
+    "fields": {
+      "company": 3,
+      "code": 34,
+      "description": "Vibration test*",
+      "confirmed": false,
+      "last_confirmed": "2016-02-13T13:03:28.157Z",
+      "created_at": "2016-02-13T13:03:28.157Z",
+      "updated_at": "2016-02-13T13:03:28.157Z",
+      "isSuggestion": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$24000$uR1bGzR4m1WG$WRjqKkJLllcWGZUvfQ4cu3RUX7BTmmCLlHaZgdEV7TU=",
+      "last_login": "2016-05-16T09:09:27.089Z",
+      "is_superuser": true,
+      "username": "brian",
+      "first_name": "Nyaundi",
+      "last_name": "Brian",
+      "email": "ndieksman@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2016-02-13T10:41:18.172Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
