@@ -3,7 +3,7 @@
   "description": "A Ussds directory application.",
   "logo": "https://photos-1.dropbox.com/t/2/AABCmL8w0GvyYBEjfGa49LRXCNIVv7jQ2yg_0J5qnv93HQ/12/1636974/png/32x32/1/1446253200/0/2/heroku-logo-stroke-purple.png/EN6UqwEYpKq3MyAHKAc/j4JHowjJ5xrFapcyO-1V_jJ_lR_4spjZEfBvaPPArTs?size_mode=2&size=1280x960",
   "image": "heroku/python",
-  "repository": "https://github.com/heroku/python-getting-started",
+  "repository": "https://github.com/danleyb2/ussds.git",
   "keywords": ["python", "django" ],
   "addons": [ "heroku-postgresql" ]
 }
