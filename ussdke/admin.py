@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ussdke.models import Company,USSD,Code
+from ussdke.models import Company,USSD,Code,Invalidation
 # Register your models here.
 
 
@@ -31,3 +31,4 @@ class CompanyAdmin(admin.ModelAdmin):
 admin.site.register(USSD,USSDAdmin)
 admin.site.register(Code,CodeAdmin)
 admin.site.register(Company,CompanyAdmin)
+admin.site.register(Invalidation)

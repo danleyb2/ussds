@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.fields import Field, ReadOnlyField
 
-from ussdke.models import USSD, Company, Code
+from ussdke.models import USSD, Company, Code, Invalidation
 from rest_framework import serializers
 
 
@@ -16,12 +16,17 @@ class CodeSerializer(serializers.ModelSerializer):
             'pk',
         )
 
+class InvalidationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Invalidation
+        fields = ('__all__')
 
 class UssdSerializer(serializers.ModelSerializer):
     code = CodeSerializer(read_only=False)
     # company = CompanySerializer(read_only=False)
     company = serializers.PrimaryKeyRelatedField(read_only=True)
-
+    invalidation_count = serializers.SerializerMethodField('_invalidation_count')
+    invalidation_url = serializers.SerializerMethodField('_invalidation_list_url')
     '''
     description = serializers.CharField()
     last_confirmed = serializers.DateTimeField(default=timezone.now())
@@ -57,6 +62,11 @@ class UssdSerializer(serializers.ModelSerializer):
         )
         depth = 1
 
+    def _invalidation_count(self,ussd):
+        return ussd.invalidation_set.count()
+
+    def _invalidation_list_url(self,ussd):
+        return (self.context['request']).build_absolute_uri(ussd.get_invalidation_list_url())
 
 class CompanyUssdSerializer(UssdSerializer):
     code = serializers.CharField(read_only=False)

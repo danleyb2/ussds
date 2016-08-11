@@ -12,8 +12,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateAPIView
 
-from ussdke.models import USSD, Company, Code
-from ussdke.serializers import UssdSerializer, CompanySerializer, CodeSerializer, CompanyUssdSerializer
+from ussdke.models import USSD, Company, Code, Invalidation
+from ussdke.serializers import UssdSerializer, CompanySerializer, CodeSerializer, CompanyUssdSerializer, InvalidationSerializer
 
 def about(request):
     context = {
@@ -108,6 +108,26 @@ class UssdDetailViewSet(RetrieveUpdateAPIView):
     """
     queryset = USSD.objects.all().order_by('-created_at')
     serializer_class = UssdSerializer
+
+class UssdDetailInvalidationList(RetrieveUpdateAPIView):
+    """
+    API endpoint that allows USSD to be viewed or edited.
+    """
+    queryset = Invalidation.objects.all()
+    serializer_class = InvalidationSerializer
+
+
+    def list(self, request, *args, **kwargs):
+        ussd = USSD.objects.get(id=kwargs.get('pk'))
+        queryset = self.get_queryset().filter(ussd=ussd).order_by('-created_at')
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 class CompanyViewSet(ListCreateAPIView):
@@ -229,6 +249,35 @@ class UssdDetail(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        ussd = self.get_object(pk)
+        ussd.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+class UssdDetailInvalidate(APIView):
+    """
+    Retrieve, update or delete a snippet instance.
+    """
+
+    def get_object(self, pk):
+        try:
+            return USSD.objects.get(pk=pk)
+        except USSD.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        query_string = ''
+        ussd = self.get_object(pk)
+        serializer = UssdSerializer(ussd,many=True)
+        return Response(serializer.data)
+
+    def post(self, request, pk, format=None):
+        ussd = self.get_object(pk)
+
+        invalidated_ussd = ussd.invalidate(request.data)
+        serializer = UssdSerializer(invalidated_ussd)
+        return Response(serializer.data)
 
     def delete(self, request, pk, format=None):
         ussd = self.get_object(pk)

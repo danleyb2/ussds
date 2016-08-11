@@ -26,7 +26,11 @@ urlpatterns = format_suffix_patterns([
             # url(r'^api/ussds',views.companies),
             # url(r'^invalidate',views.companies),
             # url(r'^fav',views.companies),
-            url(r'^(?P<pk>[0-9]+)/$', views.UssdDetailViewSet.as_view(),name='ussd'),
+            url(r'^(?P<pk>[0-9]+)/', include([
+                url(r'^$', views.UssdDetailViewSet.as_view(), name='instance'),
+                #url(r'invalidate', views.UssdDetailInvalidate.as_view(), name='invalidate'), #todo
+
+            ], namespace='ussd')),
         ]),name='ussds'
         ),
 
@@ -51,8 +55,15 @@ urlpatterns = format_suffix_patterns([
                 #url(r'^api/ussds',views.companies),
                 #url(r'^invalidate',views.companies),
                 #url(r'^fav',views.companies),
-                url(r'^(?P<pk>[0-9]+)/$', views.UssdDetailViewSet.as_view(),name='ussd'),
-            ]),name='ussds'
+                url(r'^(?P<pk>[0-9]+)/',include([
+                    url(r'^$',views.UssdDetailViewSet.as_view(), name = 'instance'),
+                    url(r'invalidation/',include([
+                        url(r'invalidate',views.UssdDetailInvalidate.as_view(), name = 'invalidate'),
+                        url(r'list',views.UssdDetailInvalidationList.as_view(), name = 'list'),
+                    ],namespace='invalidation'))
+
+                ],namespace='ussd')),
+            ],namespace='ussds'),
             ),
 
         url(r'^companies/',include(

@@ -30,7 +30,7 @@ class Company(models.Model):
 
     def get_ussds_url(self):
         #return str(self.id)+'/ussds'
-        return reverse('ussdke:api:companies:company:ussds',args=[str(self.id)]) # todo
+        return reverse('ussdke:api:companies:company:ussds',args=[str(self.id)])
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -52,8 +52,30 @@ class USSD(models.Model):
     def __str__(self):
         return self.code.value
 
+    def get_invalidation_list_url(self):
+        return reverse('ussdke:api:ussds:ussd:invalidation:list', args=[str(self.id)])
+
+    def invalidate(self,data):
+        invalidation = Invalidation()
+        invalidation.reason = data.get('reason')
+        invalidation.ussd = self
+        invalidation.save()
+        return self
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.created_at = timezone.now()
         self.updated_at = timezone.now()
         return super(USSD, self).save(*args, **kwargs)
+
+
+
+class Invalidation(models.Model):
+    reason = models.CharField(max_length=200,null=False)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField()
+    checked = models.BooleanField(default=False)
+    ussd = models.ForeignKey(USSD,null=False)
+
+    def __str__(self):
+        return self.reason
