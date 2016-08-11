@@ -30,7 +30,7 @@ class Company(models.Model):
 
     def get_ussds_url(self):
         #return str(self.id)+'/ussds'
-        return reverse('ussdke:companies:company:ussds',args=[str(self.id)]) # todo
+        return reverse('ussdke:api:companies:company:ussds',args=[str(self.id)]) # todo
 
     def save(self, *args, **kwargs):
         if not self.id:

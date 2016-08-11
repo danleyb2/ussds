@@ -33,24 +33,6 @@ def companies(request):
     pass
 
 
-def company_ussds(request,pk):
-    company=Company.objects.get(id=pk)
-    ussds_items=USSD.objects.filter(company=company)
-    paginator=Paginator(ussds_items,5)
-    page = request.GET.get('page',1)
-    try:
-        ussds = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        ussds = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        ussds = paginator.page(paginator.num_pages)
-
-    return render_to_response('ussdke/ussd/list.html', {"ussds": ussds,"company":company})
-
-
-
 def normalize_query(query_string, find_terms=re.compile(r'"([^"]+)"|(\S+)').findall,
                     norm_space=re.compile(r'\s{2,}').sub):
     return [norm_space(' ', (t[0] or t[1]).strip()) for t in find_terms(query_string)]
@@ -94,42 +76,30 @@ class CompanyUssdViewSet(ListCreateAPIView):
     serializer_class = UssdSerializer
     #pagination_class = StandardResultsSetPagination
 
-    renderer_classes = (JSONRenderer, TemplateHTMLRenderer,)
+    template_name = 'ussdke/ussd/list.html'
+    renderer_classes = (TemplateHTMLRenderer,)
 
 
     def list(self, request, *args, **kwargs):
         company = Company.objects.get(id=kwargs.get('pk'))
         queryset = self.get_queryset().filter(company=company).order_by('-created_at')
 
-        if request.accepted_renderer.format == 'html':
-            # TemplateHTMLRenderer takes a context dict,
-            # and additionally requires a 'template_name'.
-            # It does not require serialization.
 
-            paginator = Paginator(queryset, 5)
-            page = request.GET.get('page', 1)
-            try:
-                ussds = paginator.page(page)
-            except PageNotAnInteger:
-                # If page is not an integer, deliver first page.
-                ussds = paginator.page(1)
-            except EmptyPage:
-                # If page is out of range (e.g. 9999), deliver last page of results.
-                ussds = paginator.page(paginator.num_pages)
+        paginator = Paginator(queryset, 5)
+        page = request.GET.get('page', 1)
+        try:
+            ussds = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            ussds = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            ussds = paginator.page(paginator.num_pages)
 
-            #return render_to_response('ussdke/ussd/list.html', )
+        #return render_to_response('ussdke/ussd/list.html', )
 
-            data = {"ussds": ussds, "company": company}#{'users': queryset}
-            return Response(data,template_name = 'ussdke/ussd/list.html')
-
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
-        #return Response(self.get_serializer_class()(queryset,context={'request': request},many=True).data)
+        data = {"ussds": ussds, "company": company}#{'users': queryset}
+        return Response(data)
 
 
 class UssdDetailViewSet(RetrieveUpdateAPIView):
@@ -302,7 +272,32 @@ class CompanyDetail(APIView):
         company.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-class CompanyUSSDDetail(APIView):
+class CompanyUSSDDetail(ListCreateAPIView):
+    """
+    API endpoint that allows a Company USSDs to be viewed or edited.
+    """
+    queryset = USSD.objects.all()
+    serializer_class = UssdSerializer
+    #pagination_class = StandardResultsSetPagination
+
+    #renderer_classes = (JSONRenderer,)
+
+
+    def list(self, request, *args, **kwargs):
+        company = Company.objects.get(id=kwargs.get('pk'))
+        queryset = self.get_queryset().filter(company=company).order_by('-created_at')
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+        #return Response(self.get_serializer_class()(queryset,context={'request': request},many=True).data)
+
+
+class CompanyUSSDDetailOld(APIView):
     """
     Retrieve, update or delete a Company instance.
     """
