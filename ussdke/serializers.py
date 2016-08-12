@@ -26,7 +26,7 @@ class UssdSerializer(serializers.ModelSerializer):
     # company = CompanySerializer(read_only=False)
     company = serializers.PrimaryKeyRelatedField(read_only=True)
     invalidation_count = serializers.SerializerMethodField('_invalidation_count')
-    invalidation_url = serializers.SerializerMethodField('_invalidation_list_url')
+    invalidation_list_url = serializers.SerializerMethodField('_invalidation_list_url')
     '''
     description = serializers.CharField()
     last_confirmed = serializers.DateTimeField(default=timezone.now())
