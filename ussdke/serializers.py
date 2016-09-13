@@ -12,8 +12,10 @@ class CodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Code
         fields = (
-            'value',
             'pk',
+            'value',
+            'is_template',
+            
         )
 
 class InvalidationSerializer(serializers.ModelSerializer):
