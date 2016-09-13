@@ -5,4 +5,4 @@ psycopg2==2.6.1
 whitenoise==2.0.6
 djangorestframework
 Pillow
-cloudinary
+cloudinary>=1.1.2
