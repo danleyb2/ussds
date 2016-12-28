@@ -9,6 +9,8 @@ from django.core.urlresolvers import reverse
 
 
 class Code(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     value = models.CharField(max_length=100)
     is_template = models.BooleanField(default=False)
 
@@ -18,8 +20,8 @@ class Code(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=100)
-    created_at = models.DateTimeField(editable=False)
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     #icon=models.ImageField(upload_to='images/icons', default='images/icons/default.jpg')
     icon = CloudinaryField('icon')
     website=models.URLField()
@@ -45,8 +47,8 @@ class USSD(models.Model):
     description = models.TextField()
     confirmed = models.BooleanField(default=False)
     last_confirmed = models.DateTimeField()
-    created_at = models.DateTimeField(editable=False)
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     isSuggestion = models.BooleanField(default=1)
 
     def __str__(self):
@@ -72,8 +74,8 @@ class USSD(models.Model):
 
 class Invalidation(models.Model):
     reason = models.CharField(max_length=200,null=False)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     checked = models.BooleanField(default=False)
     ussd = models.ForeignKey(USSD,null=False)
 
