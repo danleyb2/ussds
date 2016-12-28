@@ -34,11 +34,6 @@ class Company(models.Model):
         #return str(self.id)+'/ussds'
         return reverse('ussdke:api:companies:company:ussds',args=[str(self.id)])
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.created_at = timezone.now()
-        self.updated_at = timezone.now()
-        return super(Company, self).save(*args, **kwargs)
 
 
 class USSD(models.Model):
@@ -64,11 +59,7 @@ class USSD(models.Model):
         invalidation.save()
         return self
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.created_at = timezone.now()
-        self.updated_at = timezone.now()
-        return super(USSD, self).save(*args, **kwargs)
+
 
 
 
