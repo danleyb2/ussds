@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.core.urlresolvers import reverse
-
+from django.contrib.auth.admin import User
 # Create your models here.
 
 
@@ -29,6 +29,9 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
+
+    def stargazer(self, user):
+        return CompanyStar.objects.filter(company=self, author=user).count()
 
     def get_ussds_url(self):
         #return str(self.id)+'/ussds'
@@ -61,6 +64,10 @@ class USSD(models.Model):
 
 
 
+class CompanyStar(models.Model):
+    company = models.ForeignKey(Company, related_name='stars')
+    author = models.ForeignKey(User)
+    created_date = models.DateTimeField(default=timezone.now)
 
 
 class Invalidation(models.Model):
