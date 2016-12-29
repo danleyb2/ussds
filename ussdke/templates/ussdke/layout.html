@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'ussdke/favicon.png' %}"/>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'ussdke/css/materialize.min.css' %}" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+    <link href="{% static 'ussdke/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <style>
+        .actv{
+            color:black
+        }
+    </style>
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo">USSDs</a>
+
+        <ul class="right hide-on-med-and-down">
+
+            {% if user.is_authenticated %}
+                <li><a href="/profile">{{ user.username }}</a></li>
+                <li><a href="/signout">Logout</a></li>
+
+            {% else %}
+                <li><a href="/signin">Login</a></li>
+                <li><a href="/signup">Sign up</a></li>
+
+            {% endif %}
+
+            <li><a href="/about">About</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="/about">About</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+<div class="container">
+    {% block content %}
+        <div class="row">
+            <div class="col s5">
+                {% include 'ussdke/company/list.html' %}
+            </div>
+            <div class="col s7 ussds">
+                {% include 'ussdke/ussd/list.html' %}
+            </div>
+
+        </div>
+
+    {% endblock %}
+</div>
+
+
+<!--  Scripts-->
+<!--script src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
+<script src="{% static 'ussdke/js/jquery-2.1.1.min.js' %}"></script>
+
+<script src="{% static 'ussdke/js/materialize.min.js' %}"></script>
+<script src="{% static 'ussdke/js/init.js' %}"></script>
+
+<script type="text/javascript">
+    function get_ussds(url) {
+
+        var showData = $('.ussds');
+
+
+        $.ajax({
+            url: url,
+            beforeSend: function (xhr) {
+                console.log('getting ussds');
+                showData.text('Loading ussds.');
+            },
+            headers: {"Accept": "text/html"},
+            type: 'GET',
+            success: function (data) {
+                showData.empty();
+                showData.html(data);
+                $('.get_ussds i').click(function (evt) {
+                    evt.preventDefault();
+                    get_ussds(evt.target.closest('a').href)
+                });
+            }
+        });
+
+
+    }
+    $(document).ready(function () {
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+            }
+        }
+    });
+
+
+
+
+
+        $('.company').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            console.log('getting ussds');
+            get_ussds('/companies/' + this.id + '/ussds');
+
+        });
+    });
+</script>
+
+{% block script %}{% endblock %}
+
+</body>
+</html>
