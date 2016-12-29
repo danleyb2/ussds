@@ -1,0 +1,169 @@
+{% extends 'ussdke/layout.html' %}
+{% block content %}
+    {% load web_extras %}
+
+
+    <div class="row">
+        {% for company in companies %}
+
+
+
+
+            <div class="col s6 m4">
+                <div class="card sticky-action small" style="overflow: hidden;">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ company.icon.url }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{ company.name }}<i
+                                class="material-icons right">more_vert</i></span>
+
+                        <p>
+                            <a href="{{ company.website }}" target="_blank">
+                                <i class="material-icons">open_in_new</i>
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="card-action">
+                        <a href="companies/{{ company.pk }}/ussds">Ussds</a>
+
+                        <a href="companies/{{ company.pk }}/{% if company|stared_by:request.user %}un{% endif %}star/"
+                           class="secondary-content">
+
+
+                            <i class="material-icons {% if company|stared_by:request.user %} actv {% endif %} star-company">star</i>
+                        </a>
+                    </div>
+
+                    <div class="card-reveal" style="display: none; transform: translateY(0px);">
+                        <span class="card-title grey-text text-darken-4">More ...<i
+                                class="material-icons right">close</i></span>
+                        <p>Has {{ company.ussds.count }} Ussds.</p>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+            {% endif %}
+
+
+        {% endfor %}
+        </div>
+
+{% endblock %}
+{% block script %}
+    {% verbatim %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            /*
+             $('.comment-form').on('submit', function (event) {
+             event.preventDefault();
+             console.log("form submitted!");
+             comment_on_post(event.target);
+             });
+             $('.comment-reply-form').on('submit', function (event) {
+             event.preventDefault();
+             comment_post_reply(event.target);
+             });
+             */
+            $('.star-company').on('click', function (event) {
+                event.preventDefault();
+                console.log("star company");
+                starToggleCompany(event.target);
+            });
+
+            /*
+             function comment_on_post(form) {
+             console.log("comment on post is working!");
+             post_comments_list_selector = '#post_'+form.dataset['post']+'_comments';
+             $.ajax({
+             url: form.action, // the endpoint
+             type: "POST", // http method
+             data: {text: $('input[name=text]', form).val()}, // data sent with the post request
+
+             // handle a successful response
+             success: function (json) {
+             $('input[name=text]', form).val(''); // remove the value from the input
+             //console.log(json); // log the returned json to the console
+
+             $(post_comments_list_selector).append(json);
+             console.log("success"); // another sanity check
+             },
+
+             // handle a non-successful response
+             error: function (xhr, errmsg, err) {
+             $('.results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+             " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+
+
+             //console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+             }
+             });
+             }
+             function comment_post_reply(form) {
+             console.log("comment on post is working!");
+             //post_comments_list_selector = '#post_'+form.dataset['post']+'_comments';
+
+             post_comments_list_selector = '#post_'+form.dataset['post']+'_comment_'+form.dataset['comment']+'_replies';
+             $.ajax({
+             url: form.action, // the endpoint
+             type: "POST", // http method
+             data: {text: $('input[name=text]', form).val()}, // data sent with the post request
+
+             // handle a successful response
+             success: function (json) {
+             $('input[name=text]', form).val(''); // remove the value from the input
+             //console.log(json); // log the returned json to the console
+
+             $(post_comments_list_selector).append(json);
+             console.log("success"); // another sanity check
+             },
+
+             // handle a non-successful response
+             error: function (xhr, errmsg, err) {
+             $('.results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+             " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+
+
+             //console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+             }
+             });
+             }
+             */
+
+            function starToggleCompany(a) {
+                console.log("starCompany function called");
+                s = a;
+
+                $.ajax({
+                    url: a.parentElement.href, // the endpoint
+                    type: "POST", // http method
+                    //data: {text: $('textarea[name=text]', form).val()}, // data sent with the post request
+
+                    // handle a successful response
+                    success: function (json) {
+                        $(a).toggleClass('actv').parent().attr('href', json.next_url);
+
+                        //console.log(json); // log the returned json to the console
+                        console.log("starCompany success!!"); // another sanity check
+                    },
+
+                    // handle a non-successful response
+                    error: function (xhr, errmsg, err) {
+                        $('.results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " + errmsg +
+                                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+
+
+                        //console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                    }
+                });
+            }
+
+
+        });
+    </script>
+    {% endverbatim %}
+{% endblock %}
