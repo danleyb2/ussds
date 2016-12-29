@@ -1,6 +1,8 @@
 <li class="collection-item">
 <div>
-    No ussds for added {{ company.name }} yet
+    {% if company %}
+        No ussds for {{ company.name }} added yet
+    {% endif %}
 
     <p>Go ahead and <a href="#!">suggest</a> or <a href="#!">ask</a> for a ussd.</p>
 </div>

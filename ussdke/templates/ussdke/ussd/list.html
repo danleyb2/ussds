@@ -1,52 +1,72 @@
-<ul class="collection with-header">
-    <li class="collection-header">
-        {% if company %}
-            <h4>{{ company.name }}</h4>
-            <span>{{ company.ussds.count }} ussds</span>
+{% extends 'ussdke/layout.html' %}
+
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+
+
+    <ul class="collection with-header">
+        <li class="collection-header">
+            {% if company %}
+                <h4>
+                    {{ company.name }}
+                <img style="float:right" src="{{ company.icon.url }}">
+                </h4>
+                <span>{{ company.ussds.count }} ussds</span>
+            {% else %}
+                <h4>All Ussds from all Companies.</h4>
+                <span>{{ ussds.count }} ussds</span>
+            {% endif %}
+
+        </li>
+        {% if ussds %}
+            {% for ussd in ussds %}
+
+                {% include 'ussdke/ussd/item.html' %}
+
+            {% endfor %}
         {% else %}
-            <h4>All Ussds from all Companies.</h4>
-            <span>{{ ussds.count }} ussds</span>
+            {% include 'ussdke/ussd/no_item.html' with company=company %}
         {% endif %}
 
-    </li>
-    {% if ussds %}
-        {% for ussd in ussds %}
 
-        {% include 'ussdke/ussd/item.html' %}
-
-        {% endfor %}
-    {% else %}
-        {% include 'ussdke/ussd/no_item.html' with company=company%}
-    {% endif %}
-
-
-
-</ul>
-<ul class="pagination">
-    {% if ussds.has_previous %}
+    </ul>
+    <ul class="pagination center">
+        {% if ussds.has_previous %}
             <li class="waves-effect">
-                <a href="/companies/{{ company.id }}/ussds?page={{ ussds.previous_page_number }}" class="get_ussds">k</a>
+                <a href="/companies/{{ company.id }}/ussds?page={{ ussds.previous_page_number }}"
+                   class="get_ussds">k</a>
             </li>
         {% else %}
-        <li class="disabled">
-            <a href="#!"><i class="material-icons">chevron_left</i></a>
-        </li>
-    {% endif %}
+            <li class="disabled">
+                <a ><i class="material-icons">chevron_left</i></a>
+            </li>
+        {% endif %}
 
         {% if ussds.paginator.num_pages > 1 %}
-        {% for page in ussds.paginator.page_range %}
-            <li class="waves-effect {% if ussds.number == page  %}active{% endif %}"><a href="?page={{page }}">{{ page }}</a></li>
-        {% endfor %}
+            {% for page in ussds.paginator.page_range %}
+                <li class="waves-effect {% if ussds.number == page %}active{% endif %}"><a
+                        href="?page={{ page }}">{{ page }}</a></li>
+            {% endfor %}
         {% endif %}
 
         {% if ussds.has_next %}
             <li class="waves-effect">
-                <a href="/companies/{{ company.id }}/ussds?page={{ ussds.next_page_number }}" class="get_ussds"><i class="material-icons">chevron_right</i></a>
+                <a href="/companies/{{ company.id }}/ussds?page={{ ussds.next_page_number }}" class="get_ussds"><i
+                        class="material-icons">chevron_right</i></a>
+            </li>
+            {% else %}
+            <li class="disabled">
+                <a ><i class="material-icons">chevron_right</i></a>
             </li>
         {% endif %}
 
 
-  </ul>
-<script type="text/javascript">
+    </ul>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
 
-</script>
+    </script>
+{% endblock %}

@@ -1,12 +1,37 @@
 <li class="collection-item">
-<div>
-    {{ ussd.code }}
+    <div>
+        {{ ussd.code }}
 
-    <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
-    <a href="#!" class="secondary-content"><i class="material-icons">star</i></a>
-    <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
+        <a href="/ussds/{{ ussd.pk }}/star" class="secondary-content"><i class="material-icons">star</i></a>
 
-    <p>{{ ussd.description }}.</p>
-    <p>{{ ussd.invalidation_set.count }} invalidation.</p>
-</div>
+        <a href="#!" class="secondary-content"><i class="material-icons">thumb_up</i></a>
+        <a href="#!" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+
+
+        <p>{{ ussd.description }}.</p>
+        <p>{{ ussd.invalidation_set.count }} invalidation.</p>
+
+
+        {% if ussd.isSuggestion and not ussd.confirmed %}
+            <div class="chip">
+
+                Suggestion
+            </div>
+        {% endif %}
+        {% if ussd.confirmed %}
+            <div class="chip">
+
+                confirmed
+            </div>
+        {% endif %}
+
+        <div class="chip">
+                Last confirmed on {{ ussd.last_confirmed|date }}
+        </div>
+        <div class="chip">
+                Uses Money
+        </div>
+
+
+    </div>
 </li>
