@@ -1,0 +1,24 @@
+{% extends 'ussdke/layout.html' %}
+{% block content %}
+    <div class="section no-pad-bot" id="">
+        <div class="container">
+            <br>
+
+            <div class="row center">
+                <h5 class="header col s12 light">Register</h5>
+
+                <form class="" method="post" action="">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <input type="submit" value="Register">
+                </form>
+
+            </div>
+
+            <br>
+
+        </div>
+    </div>
+{% endblock %}
